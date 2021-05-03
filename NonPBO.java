@@ -2,6 +2,11 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 
+/*
+    On this case, we're not using any OOP elements such as like Inhertance, Encapsulation, Abstract, Interface, etc
+    So, we write all declarations manually one by one
+*/
+
 public class NonPBO 
 {
     static String username;
@@ -169,6 +174,8 @@ public class NonPBO
         /***********************************************************
         Transition from starterFrame to question1Frame configurations are below
         ***********************************************************/
+
+        // In order to connect 2 frames, we should at least write JFrame declarations of them first
 
         starterSubmit.addActionListener(new ActionListener() 
         {
@@ -1210,18 +1217,24 @@ public class NonPBO
         title.setBounds(200, 25, 150, 25);
         resultFrame.add(title);
 
+        /*
+            Attention, We think that something isn't right with these 3 values calling
+            Because the shown values aren't the proper values. But, if we call it with other than JLabel. Not only JLabel, but also in JButton, JTextField, JTextArea, etc
+            For example, like JOptionPane. The result is correct 
+        */
+        // Call the gathered username value to shown
         JLabel result_label1 = new JLabel();
         result_label1.setText("Your name : " + username);
         result_label1.setBounds(25, 75, 200, 25);
         resultFrame.add(result_label1);
 
-        String temp = starterNama.getText();
-
-        JLabel result_label2 = new JLabel("Your Country : " + temp);
+        // Call the gathered country value to shown
+        JLabel result_label2 = new JLabel("Your Country : " + country);
         result_label2.setBounds(25, 125, 200, 25);
         resultFrame.add(result_label2);
 
-        JLabel result_label3 = new JLabel("Your Score : " + String.valueOf(score));
+        // Call the gathered score value to shown
+        JLabel result_label3 = new JLabel("Your Score : " + score);
         result_label3.setBounds(25, 175, 100, 25);
         resultFrame.add(result_label3);
 

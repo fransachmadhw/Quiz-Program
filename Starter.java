@@ -2,23 +2,34 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 
-public class Starter extends User {
+// extends means this class (Starter) is a child class of User class. Apply some methods in User class
+// User class isn't a common class in this case. But it's an abstract class that contains methods with no body
+public class Starter extends User 
+{ 
+    // These are sample of encapsulations. Using private modifier which it means another class outside this class (not connected) can't apply these GUI objects
     private JTextField nama, negara;
     private JLabel title, label1, label2;
     private JButton submit;
 
+    // These are empty variables
     public static String username;
     public static String country;
 
-    public static String getName() {
+    // These methods are originally from this class. Literally, both are kind of Accessor Method. Its use mainly is to get a value by a return command
+    public static String getName() 
+    {
         return username;
     }
 
-    public static String getCountry() {
+    public static String getCountry() 
+    {
         return country;
     }
 
-    public Starter() {
+    // This is a constructor method (Use the same name with the class)
+    public Starter() 
+    {
+        // Some created objects below are implementation of Java GUI library
         JFrame frame = new JFrame("Computer Science Quiz");
         frame.setBounds(200, 200, 500, 325);
         frame.setLayout(null);
@@ -48,58 +59,77 @@ public class Starter extends User {
         submit.setBounds(200, 200, 90, 30);
         frame.add(submit);
 
+        // Get a user screen size
         Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
 
+        // Dividing both width and height by 2 so that the frame will show in the center of the screen
         int x = layar.width / 2 - frame.getSize().width / 2;
         int y = layar.height / 2 - frame.getSize().height / 2;
 
+        // Locate the frame with declared x and y
         frame.setLocation(x, y);
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // submit.addActionListener(this);
 
-        submit.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                
-                try {
+        // Adding an action listener element manually to submit button without implements action listener to the whole class
+        submit.addActionListener(new ActionListener() 
+        {
+            // To tell the object to do something after it being clicked by user
+            public void actionPerformed(ActionEvent e) 
+            {
+                try 
+                {
+                    // Run the mutator methods which originally from User class (parent)
                     setName();
                     setCountry();
-                    // name = nama.getText();
-                    // country = negara.getText();
-                    if (username.equals("")) {
+
+                    // Create some conditions to make the system easier to decide something to do next
+                    if (username.equals("")) 
+                    {
                         throw new Exception("\n Username must be filled");
-                    } else if (country.equals("")) {
+                    } 
+                    else if (country.equals("")) 
+                    {
                         throw new Exception("\n Country must be filled");
-                    } else {
-                        if ((!username.matches("[a-zA-Z]+"))) {
+                    } 
+                    else 
+                    {
+                        if ((!username.matches("[a-zA-Z]+"))) 
+                        {
                             throw new Exception("\n Username is only permitable using words");
-                        } else if (!country.matches("[a-zA-Z]+")) {
+                        } 
+                        else if (!country.matches("[a-zA-Z]+")) 
+                        {
                             throw new Exception("\n Country is only permitable using words");
-                        } else {
+                        } 
+                        else 
+                        {
                             JOptionPane.showMessageDialog(null, "Good Luck !");
                             frame.setVisible(false);
                             Question1 newFrame = new Question1();     
                         }
                     }
-                } catch (Exception z) {
+                } 
+
+                // To catch all thrown exceptions
+                catch (Exception z) 
+                {
                     JOptionPane.showMessageDialog(null, "" + z);
                     System.err.println("" + z);
                 }
-                // call the object of NewWindow and set visible true
-                // Question1 newFrame = new Question1();
-                // newFrame.setVisible(true);
-                // frame.setVisible(false);
-                // set default close operation
-                // frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             }
         });
     }
 
-    public void setName() {
+    // These methods below are the declaration of Mutator methods which applied before
+    public void setName() 
+    {
         username = nama.getText();
     }
 
-    public void setCountry() {
+    public void setCountry() 
+    {
         country = negara.getText();
     }
 }

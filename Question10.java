@@ -73,8 +73,6 @@ class Question10 {
                 }
                 Result newFrame = new Result();
                 frame.setVisible(false);
-                // JOptionPane.showMessageDialog(null, "Your Score = " + score);
-                // System.exit(0);
             }
         });
     }

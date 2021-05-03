@@ -7,10 +7,11 @@ class Result {
     private JLabel title, label1, label2, label3, nama, negara, hasil, gambar;
     private JButton again, exit;
 
-    public static int score = Question10.getScore();
-    public static String username = Starter.getName();
-    public static String country = Starter.getCountry();
+    public static int score = Question10.getScore(); // Pass the score value from question10 to this class
+    public static String username = Starter.getName(); // Declare username variable as method
+    public static String country = Starter.getCountry(); // Same like username
 
+    // These accessor methods below are to get a value of each variable within the methods
     public static int getScore() 
     {
         return score;
@@ -26,14 +27,19 @@ class Result {
         return country;
     }
 
-    public Result() {
-        if (score > 70) {
+    public Result() 
+    {
+        // Create a conditions about which image will be shown. Depends on the gathered score
+        if (score > 70) 
+        {
             ImageIcon picture = new ImageIcon("Congratulation.jpeg");
             gambar = new JLabel();
             gambar.setIcon(picture);
             gambar.setBounds(105, 225, 325, 200);
 
-        } else {
+        } 
+        else 
+        {
             ImageIcon picture = new ImageIcon("try again.png");
             gambar = new JLabel();
             gambar.setIcon(picture);

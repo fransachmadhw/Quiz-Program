@@ -68,11 +68,6 @@ class Question3 {
         p3.add(btnNext);
         frame.add("South", p3);
 
-        // a3_1.addActionListener(this);
-        // a3_2.addActionListener(this);
-        // a3_3.addActionListener(this);
-        // btnNext.addActionListener(this);
-
         Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
 
         int x = layar.width / 2  - frame.getSize().width / 2;
@@ -144,36 +139,5 @@ class Question3 {
                 // frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             }
         });
-
     }
-
-    // public void actionPerformed(ActionEvent e)
-    // {
-    // if(e.getSource() == btnNext)
-    // {
-    // if (a3_1.isSelected())
-    // {
-    // score += 10;
-    // }
-
-    // else if (a3_2.isSelected())
-    // {
-    // score += 0;
-    // }
-
-    // else if (a3_3.isSelected())
-    // {
-    // score += 0;
-    // }
-
-    // else
-    // {
-    // score += 0;
-    // }
-
-    // Question4 frame = new Question4();
-    // setVisible(false);
-
-    // }
-    // }
 }

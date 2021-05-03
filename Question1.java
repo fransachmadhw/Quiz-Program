@@ -10,6 +10,7 @@ class Question1 {
     private JButton btnNext;
     private JLabel label;
 
+    // Static means the variable can be called directly without creating a new object first in order to call it
     public static int score = 0;
 
     public static int getScore() {
@@ -69,11 +70,6 @@ class Question1 {
         p3.add(btnNext);
         frame.add("South", p3);
 
-        // a1_1.addActionListener(this);
-        // a1_2.addActionListener(this);
-        // a1_3.addActionListener(this);
-        // btnNext.addActionListener(this);
-
         Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
 
         int x = layar.width / 2  - frame.getSize().width / 2;
@@ -84,6 +80,8 @@ class Question1 {
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        // Because we don't use actionListener as its impelementation for the whole class
+        // So we must declare it one by one
         a1_1.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent e)
@@ -139,43 +137,13 @@ class Question1 {
                 else {
                     score += 0;
                 }
-                // call the object of NewWindow and set visible true
+                // Call question2 class to show its frame
+                // You could write newFrame.setVisible(true) in order to show its frame
+                // But the default value after calling the frame is true. So it's not necessary
+                // After that, we must hide the frame of this class 
                 Question2 newFrame = new Question2();
-                // newFrame.setVisible(true);
                 frame.setVisible(false);
-                // set default close operation
-                // frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             }
         });
-
     }
-
-    // public void actionPerformed(ActionEvent e)
-    // {
-    // if(e.getSource() == btnNext)
-    // {
-    // if (a1_1.isSelected())
-    // {
-    // score += 0;
-    // }
-
-    // else if (a1_2.isSelected())
-    // {
-    // score += 0;
-    // }
-
-    // else if (a1_3.isSelected())
-    // {
-    // score += 10;
-    // }
-
-    // else
-    // {
-    // score += 0;
-    // }
-
-    // Question2 frame = new Question2();
-    // frame.setVisible(true);
-    // }
-    // }
 }

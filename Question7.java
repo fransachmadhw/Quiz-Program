@@ -52,11 +52,6 @@ class Question7 {
         p3.add(btnNext);
         frame.add("South", p3);
 
-        // a5_1.addActionListener(this);
-        // a5_2.addActionListener(this);
-        // a5_3.addActionListener(this);
-        // btnNext.addActionListener(this);
-
         Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
 
         int x = layar.width / 2  - frame.getSize().width / 2;

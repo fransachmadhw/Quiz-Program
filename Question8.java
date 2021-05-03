@@ -52,11 +52,6 @@ class Question8 {
         p3.add(btnNext);
         frame.add("South", p3);
 
-        // a5_1.addActionListener(this);
-        // a5_2.addActionListener(this);
-        // a5_3.addActionListener(this);
-        // btnNext.addActionListener(this);
-
         Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
 
         int x = layar.width / 2  - frame.getSize().width / 2;
@@ -93,47 +88,7 @@ class Question8 {
                     // JOptionPane.showMessageDialog(null, "Your Score = " + score);
                     // System.exit(0);
                 }
-
-                // call the object of NewWindow and set visible true
-                // Question5 newFrame = new Question5();
-                // newFrame.setVisible(true);
-                // frame.setVisible(false);
-                // set default close operation
-                // frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
             }
         });
-
     }
-
-    // public void actionPerformed(ActionEvent e)
-    // {
-    // if(e.getSource() == btnNext)
-    // {
-    // if (a5_1.isSelected())
-    // {
-    // score += 0;
-    // }
-
-    // else if (a5_2.isSelected())
-    // {
-    // score += 10;
-    // }
-
-    // else if (a5_3.isSelected())
-    // {
-    // score += 0;
-    // }
-
-    // else
-    // {
-    // score += 0;
-    // }
-
-    // JOptionPane.showMessageDialog(this, "Your Score = " + score);
-
-    // System.exit(0);
-
-    // }
-    // }
 }
