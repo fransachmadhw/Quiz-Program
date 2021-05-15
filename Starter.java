@@ -15,17 +15,6 @@ public class Starter extends User
     public static String username;
     public static String country;
 
-    // These methods are originally from this class. Literally, both are kind of Accessor Method. Its use mainly is to get a value by a return command
-    public static String getName() 
-    {
-        return username;
-    }
-
-    public static String getCountry() 
-    {
-        return country;
-    }
-
     // This is a constructor method (Use the same name with the class)
     public Starter() 
     {
@@ -131,5 +120,16 @@ public class Starter extends User
     public void setCountry() 
     {
         country = negara.getText();
+    }
+
+    // These methods are originally from this class. Literally, both are kind of Accessor Method. Its use mainly is to get a value by a return command
+    public static String getName() 
+    {
+        return username;
+    }
+
+    public static String getCountry() 
+    {
+        return country;
     }
 }

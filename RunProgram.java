@@ -7,10 +7,5 @@ public class RunProgram {
         JOptionPane.showMessageDialog(null, "Hello, good luck on working these questions", "Computer Science Quiz",
                 JOptionPane.INFORMATION_MESSAGE);
         Starter frame = new Starter(); // Create a new object based on Starter class in order to run the program from beginning
-        // JFrame obj = new JFrame();
-        // obj.setBounds(10, 10, 700, 600);
-        // obj.setTitle("Application Form");
-        // obj.setResizable(false);
-        // obj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }

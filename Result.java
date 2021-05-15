@@ -11,22 +11,6 @@ class Result {
     public static String username = Starter.getName(); // Declare username variable as method
     public static String country = Starter.getCountry(); // Same like username
 
-    // These accessor methods below are to get a value of each variable within the methods
-    public static int getScore() 
-    {
-        return score;
-    }
-
-    public static String getName() 
-    {
-        return username;
-    }
-
-    public static String getCountry() 
-    {
-        return country;
-    }
-
     public Result() 
     {
         // Create a conditions about which image will be shown. Depends on the gathered score
@@ -88,6 +72,7 @@ class Result {
         again.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
+                reset();
                 Starter newFrame = new Starter();
             }
         });
@@ -97,5 +82,29 @@ class Result {
                 System.exit(0);
             }
         });
+    }
+    
+    // These accessor methods below are to get a value of each variable within the methods
+    public static int getScore() 
+    {
+        return score;
+    }
+
+    public static String getName() 
+    {
+        return username;
+    }
+
+    public static String getCountry() 
+    {
+        return country;
+    }
+
+    // This method below is to reset all the necessary variables
+    public static void reset()
+    {
+        username = "";
+        country = "";
+        score = 0;
     }
 }
